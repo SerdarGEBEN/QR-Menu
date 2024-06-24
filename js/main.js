@@ -1,5 +1,5 @@
 import { buttonsData, menu } from "./db.js";
-import { calculatePrice, elements } from "./helpers.js";
+import { elements } from "./helpers.js";
 
 //* Fonksiyonlar
 const searchCategory = (e) => {
@@ -16,7 +16,7 @@ const searchCategory = (e) => {
   }
 
   renderButtons(category);
-}
+};
 //! Ekrana menu elemanlarını aktaracak fonksiyondur.
 const renderMenuItems = (menuItems) => {
   //! Gönderilen verileri dönup her bir veri için bir a etiketi oluştur.
@@ -25,7 +25,7 @@ const renderMenuItems = (menuItems) => {
       `
           <a
          id="card"
-         href="/productDetail.html?id=1${item.id}&category=${item.category}&price=${item.price}"
+         href="/productDetail.html?id=${item.id}&category=${item.category}&price=${item.price}"
          class="text-decoration-none text-black d-flex flex-column flex-md-row gap-2"
       >
         <img class="raunded shadow" src="${item.img}" alt="" />
@@ -45,7 +45,7 @@ const renderMenuItems = (menuItems) => {
   menuHTML = menuHTML.join("");
   //! Oluşturduğumuz menuHTML değişkenini ekrana aktardık.
   elements.menuArea.innerHTML = menuHTML;
-}
+};
 
 const renderButtons = (active) => {
   elements.buttonsArea.innerHTML = "";
